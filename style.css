@@ -104,7 +104,7 @@ nav ul li a:hover {
 /* تنسيق القسم الذي يحتوي صورة الدكتور والمؤهلات */
 .about-content {
   display: flex;
-  flex-direction: column; /* بدلاً من row-reverse */
+  flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 30px;
@@ -129,8 +129,9 @@ nav ul li a:hover {
 
 /* قائمة المؤهلات والخدمات */
 .qualifications, .services ul, .contact ul {
-  list-style: decimal;
-  padding-right: 0;
+  list-style-position: inside;
+  list-style-type: decimal;
+  padding: 0;
   text-align: center;
   margin: 0 auto;
   max-width: 600px;
@@ -138,10 +139,11 @@ nav ul li a:hover {
 }
 
 .services ul, .contact ul {
-  list-style: disc;
+  list-style-type: disc;
 }
 
 .qualifications li, .services ul li, .contact ul li {
+  display: list-item;
   text-align: center;
 }
 
