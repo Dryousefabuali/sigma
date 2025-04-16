@@ -10,6 +10,7 @@ body {
   color: #2e3d49;
   text-align: center;
   line-height: 1.6;
+  direction: rtl; /* دعم اللغة العربية */
 }
 
 /* ترويسة الموقع */
@@ -97,28 +98,24 @@ nav ul li a:hover {
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-
-.about h1, .services h1, .contact h1 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #007b8f;
 }
 
 /* تنسيق القسم الذي يحتوي صورة الدكتور والمؤهلات */
 .about-content {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
+  flex-direction: column; /* بدلاً من row-reverse */
+  align-items: center;
+  text-align: center;
   gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 /* صورة الدكتور */
 .doctor-image {
-  text-align: center;
-  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .doctor-image img {
@@ -127,13 +124,14 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #007b8f;
+  margin: 0 auto;
 }
 
 /* قائمة المؤهلات والخدمات */
 .qualifications, .services ul, .contact ul {
   list-style: decimal;
-  padding-right: 20px;
-  text-align: right;
+  padding-right: 0;
+  text-align: center;
   margin: 0 auto;
   max-width: 600px;
   line-height: 1.8;
@@ -141,6 +139,10 @@ nav ul li a:hover {
 
 .services ul, .contact ul {
   list-style: disc;
+}
+
+.qualifications li, .services ul li, .contact ul li {
+  text-align: center;
 }
 
 /* قسم الفورم */
@@ -166,6 +168,7 @@ nav ul li a:hover {
 .contact-details {
   margin-top: 20px;
   line-height: 1.8;
+  text-align: center;
 }
 
 .contact-details a {
@@ -184,6 +187,7 @@ footer {
   color: #ffffff;
   padding: 20px;
   margin-top: 20px;
+  text-align: center;
 }
 
 /* قسم الفيديو */
@@ -194,6 +198,7 @@ footer {
   border-radius: 8px;
   max-width: 1000px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .video-section h3 {
@@ -209,4 +214,33 @@ footer {
   border-radius: 10px;
   border: 3px solid #007b8f;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+  }
+
+  .gallery .images img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about, .services, .contact {
+    padding: 20px 10px;
+  }
+
+  .doctor-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .video-section {
+    padding: 20px 10px;
+  }
 }
